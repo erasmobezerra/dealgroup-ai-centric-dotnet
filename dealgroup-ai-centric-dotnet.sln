@@ -1,9 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sintaxe-basica-csharp", "sintaxe-basica-csharp\sintaxe-basica-csharp.csproj", "{158AB01A-0500-4442-B0F5-0F0FDD19E9DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-sintaxe-basica-csharp", "sintaxe-basica-csharp\01-sintaxe-basica-csharp.csproj", "{158AB01A-0500-4442-B0F5-0F0FDD19E9DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-tipos-de-operadores-csharp", "tipos-de-operadores-csharp\02-tipos-de-operadores-csharp.csproj", "{79AB1452-90F6-4081-8943-00273EF1C49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-tipos-de-conversoes-scharp", "tipos-de-conversoes-scharp\03-tipos-de-conversoes-scharp.csproj", "{CC9A1568-C6A2-49F4-827D-35AF79850B04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-calculadora-aritmetica", "operadores-aritmeticos\02-calculadora-aritmetica.csproj", "{F4BB68F1-CAD3-46BB-929F-7F67B98CC8A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-estruturas-condicionais", "estruturas-de-repeticao\04-estruturas-condicionais.csproj", "{0BF44A41-3D98-4F54-96C3-722213434E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-estruturas-de-repeticao", "05-estruturas-de-repeticao\05-estruturas-de-repeticao.csproj", "{7617B249-3A92-429C-A711-82ADF8E8D699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-arrays-e-listas-scharp", "06-arrays-e-listas-scharp\06-arrays-e-listas-scharp.csproj", "{A41548F8-8AB7-41F7-85CC-96BF400CA28A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{158AB01A-0500-4442-B0F5-0F0FDD19E9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{158AB01A-0500-4442-B0F5-0F0FDD19E9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{158AB01A-0500-4442-B0F5-0F0FDD19E9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AB1452-90F6-4081-8943-00273EF1C49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AB1452-90F6-4081-8943-00273EF1C49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AB1452-90F6-4081-8943-00273EF1C49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AB1452-90F6-4081-8943-00273EF1C49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9A1568-C6A2-49F4-827D-35AF79850B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9A1568-C6A2-49F4-827D-35AF79850B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9A1568-C6A2-49F4-827D-35AF79850B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9A1568-C6A2-49F4-827D-35AF79850B04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4BB68F1-CAD3-46BB-929F-7F67B98CC8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BB68F1-CAD3-46BB-929F-7F67B98CC8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BB68F1-CAD3-46BB-929F-7F67B98CC8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4BB68F1-CAD3-46BB-929F-7F67B98CC8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BF44A41-3D98-4F54-96C3-722213434E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BF44A41-3D98-4F54-96C3-722213434E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BF44A41-3D98-4F54-96C3-722213434E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BF44A41-3D98-4F54-96C3-722213434E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7617B249-3A92-429C-A711-82ADF8E8D699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7617B249-3A92-429C-A711-82ADF8E8D699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7617B249-3A92-429C-A711-82ADF8E8D699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7617B249-3A92-429C-A711-82ADF8E8D699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41548F8-8AB7-41F7-85CC-96BF400CA28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41548F8-8AB7-41F7-85CC-96BF400CA28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41548F8-8AB7-41F7-85CC-96BF400CA28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41548F8-8AB7-41F7-85CC-96BF400CA28A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
