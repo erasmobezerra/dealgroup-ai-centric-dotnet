@@ -88,19 +88,17 @@ O foreach foi adicionado pois na maioria das vezes que precisamos percorrer os e
 
 
 Veja como percorríamos um array antes da existência da estrutura foreach:
-*/
+
 
 string[] alunos = new string[4] { "Cleyson", "Anna", "Autobele", "Hayssa" };
 for (int i = 0; i < 4; i++)
 {
     Console.WriteLine(alunos[i]);
 }
-
+*/
 
 
 // Veja como ficaria o código acima refatorado para que usemos o foreach:
-
-
 string[] alunos = new string[4] { "Cleyson", "Anna", "Autobele", "Hayssa" };
 foreach (var aluno in alunos)
 {
@@ -150,4 +148,4 @@ while(!sair)
 
 Console.WriteLine("O programa foi encerrado.");
 
-*
+
