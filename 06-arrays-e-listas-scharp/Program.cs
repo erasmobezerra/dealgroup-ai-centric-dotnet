@@ -1,13 +1,58 @@
 ﻿
 
-//== ARRAYS ( Matrizes ) E LISTAS ( Coleções ) em C# ==
+//== ARRAYS E LISTAS em C# ==
+
+// https://balta.io/blog/arrays-monodimensionais-e-multidimensionais-no-csharp
+
+/* ARRAYS 
+
+Os arrays são representações de listas no C#. 
+São estruturas fixas de dados que armazenam múltiplos valores do mesmo tipo.
+Deve ser inicializado com o tamanho definido.
+Os elementos são acessados por índices iniciando em 0. */
+
+/* Array monodimensional (vetor)
+O array monodimensional, também conhecido como vetor, é uma lista simples que pode ser declarada da seguinte forma:*/
+using System;
+using System.Runtime.Intrinsics.X86;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+var monodimensionalArray = new int[10];
+
+/*
+ É preciso lembrar que os arrays no C# tem a posição inicial como zero. Sendo assim, um array de 10 elementos fica com as posições: 0, 1, 2... 8, 9.
+ O C# uma linguagem tipada e isto implica que, uma vez definido o tipo do array, apenas valores do mesmo tipo serão aceitos.
+ 
+
+ *Inicializando o vetor
+  O array pode ser inicializado na declaração Ou posteriormente adicionando valor a cada posição: */
+var monodimensionalArray1 = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+monodimensionalArray1[0] = 61;
+
+/* O valor entre colchetes representa a posição do array que deve receber o valor. No exemplo acima, a posição zero está recebendo o valor 61, ou seja, ao 
+lermos a primeira posição do nosso array teremos 61 como retorno. 
 
 
-// Arrays (MATRIX)
+ *Lendo itens do vetor
+  Ler o valor de um elemento do array é bem simples. Basta chamar o array e entre colchetes passar a posição que desejamos: */
+Console.WriteLine($"{monodimensionalArray1[0]}");
 
-//-Estrutura fixa de dados que armazena múltiplos valores do mesmo tipo.
-//- Deve ser inicializado com o tamanho definido.
-//- Os elementos são acessados por índices iniciando em 0.
+
+/*Percorrendo o vetor
+Nós podemos utilizar tanto a instrução for quanto a instrução foreach para percorrer o nosso array e declararmos uma ação cada vez que chegarmos em uma posição diferente.
+
+Primeiro vamos atribuir valores para cada posição do nosso array:*/
+for (var item = 0; item < monodimensionalArray.Length; item++)
+    monodimensionalArray[item] = item;
+
+// Nos exemplos abaixo, o array é percorrido e o valor armazenado em cada posição é exibido no console:
+for (var item = 0; item < monodimensionalArray.Length; item++)
+    Console.WriteLine(monodimensionalArray[item]);
+
+// Simplificando com foreach:
+
+foreach (var item in monodimensionalArray)
+    Console.WriteLine(monodimensionalArray[item]);
 
 
 
@@ -15,56 +60,67 @@
 // e tento acessar o elemento 3 que não existe, será lançada uma exceção:
 int[] arrayInteiros = new int[3];
 
-arrayInteiros[0] = 72;
-arrayInteiros[1] = 64;
-arrayInteiros[2] = 50;
-//arrayInteiros[3] = 50;
+// Nota 1: Nos casos em que se faça necessário copiar um array, opte sempre pelo método .Clone(). Usar = com arrays apenas cria uma nova referência para os mesmos elementos, 
+//         e a edição de um elemento pode acabar modificando os "dois" arrays.Nota 1: Nos casos em que se faça necessário copiar um array, opte sempre pelo método .Clone(). Usar = com arrays apenas cria uma nova referência para os mesmos elementos, e a edição de um elemento pode acabar modificando os "dois" arrays.
+int[] original = { 1, 2, 3 };
+int[] copia = (int[])original.Clone();
+
+// Nota 2: Copiando arrays com Array.Copy() é uma forma de copiar os elementos de um array para outro array já existente, especificando quantos elementos devem ser copiados.
+int[] numeros = { 1, 2, 3, 4 };
+int[] copiaNumeros = new int[4];
+Array.Copy(numeros, copiaNumeros, numeros.Length);
 
 
-// TIPO DE MATRIZES EM C#
-
-// Uma matriz pode ser unidimensional, multidimensional ou irregular.
-// O número de dimensões é definido quando uma variável de matriz é declarada.
-// O comprimento de cada dimensão é estabelecido quando a instância da matriz é criada.
-// Esses valores não podem ser alterados durante o ciclo de vida da instância.
-// As matrizes são indexadas por zero: uma matriz com elementos n é indexada de 0 para n-1.
-// Os elementos de matriz podem ser de qualquer tipo, inclusive um tipo de matriz.
-
-// Array unidimensional
-int[] array1 = new int[5];
-// Declare and set array element values.
-int[] array2 = [1, 2, 3, 4, 5, 6];
-
-// Array multidimensional
-int[,] multiDimensionalArray1 = new int[2, 3];
-// Declare and set array element values.
-int[,] multiDimensionalArray2 = { { 1, 2, 3 }, { 4, 5, 6 } };
-
-// Uma matriz irregular ( jagged array ) é uma matriz de matrizes e cada matriz de membros tem o valor padrão de null.
-int[][] jaggedArray = new int[6][];
-jaggedArray[0] = [1, 2, 3, 4];
+/*
+Array multidimensional (matriz)
+Um array multidimensional (matriz) é uma estrutura de dados que permite armazenar valores em mais de uma dimensão, como uma tabela ou grade.
 
 
+Declarando a matriz
+Podemos declarar a matriz acima como um array multidimensional 3x2:*/
 
-// Percorrendo um Array com "For"
-for (int contador = 0; contador < arrayInteiros.Length; contador++)
-{
-    Console.WriteLine($"Posicao Nº {contador} - {arrayInteiros[contador]}");
-}
+var rows = 3;
+var columns = 2;
 
-// Percorrendo um Array com "Foreach"
-int contadorDeArray = 0;
-foreach (int valor in arrayInteiros)
-{
-    Console.WriteLine($"Posicao Nº {contadorDeArray} - {valor}");
-    contadorDeArray++;
-}
+var varMultidimensionalArray = new int[rows, columns];
+
+// Ou de forma mais direta:
+
+var multidimensionalArray1 = new int[3, 2];
+
+//Inicializando a matriz
+//A matriz pode ser inicializada na declaração, variando de acordo com a dimensão da matriz:
+
+var multidimensionalArray = new int[3, 2] { { 16, 52 }, { 91, 43 }, { 77, 28 } };
+
+//Ou posteriormente adicionando valor a cada posição assim como mostrado na matriz monodimensional:
+multidimensionalArray[0, 0] = 16; // primeira linha, coluna um
+multidimensionalArray[0, 1] = 52; // primeira linha, coluna dois
+multidimensionalArray[1, 0] = 91; // segunda linha, coluna um
+multidimensionalArray[1, 1] = 43; // segunda linha, coluna dois
+multidimensionalArray[2, 0] = 77; // terceira linha, coluna um
+multidimensionalArray[2, 1] = 28; // terceira linha, coluna dois
+// Observe que, diferente do vetor, atribuir valor à matriz exige que seja declarada a linha e coluna do item que está recebendo valor.
 
 
+// Lendo itens da matriz
+// Ler o valor de um item de uma matriz é tão simples quanto ler de um vetor. Basta chamar a matriz e entre colchetes passar a linha e coluna que desejamos:
+Console.WriteLine(multidimensionalArray[0, 0]);
+//E assim teremos como saída no console o valor da posição indicada.
+
+
+// Percorrendo a matriz
+// Com a nossa matriz definida, vamos percorrer os elementos utilizando a instrução foreach para exibir o valor dos elementos no console:
+
+foreach (var item in multidimensionalArray)
+    Console.WriteLine($"{item}");
+
+
+// **************************************************
 
 // Formas de Iterar Arrays em C#
 
-// Array unidimensional
+// Array unidimensional (Vetor)
 int[] notas = { 7, 8, 9 };
 
 Console.WriteLine("Notas (for):");
@@ -79,7 +135,7 @@ foreach (int nota in notas)
     Console.WriteLine($"Nota: {nota}");
 }
 
-// Array bidimensional
+// Array bidimensional (Matriz)
 int[,] tabela = {
             { 1, 2 },
             { 3, 4 },
@@ -101,6 +157,7 @@ foreach (int valor in tabela)
     Console.WriteLine(valor);
 }
 
+// **************************************************
 
 //🔢 Array em C#: Métodos e Propriedades Comuns
 
@@ -135,17 +192,11 @@ Array.Clear(numeross, 1, 2); // [50, 0, 0, 10]
 */
 Array.Resize(ref arrayInteiros, arrayInteiros.Length * 2);
 
-/*
- Copiando um Array -> Copy()
- Copia os elementos de um array para outro array já existente, especificando quantos elementos devem ser copiados.
-*/
-int[] arrayInteirosDobrado = new int[arrayInteiros.Length * 2];
-Array.Copy(arrayInteiros, arrayInteirosDobrado, arrayInteiros.Length);
+
+// **************************************************
 
 
-
-
-//📋 LISTAS ( Coleções ) em C#
+//📋 LISTAS em C#
 
 //- Elas são extremamente versáteis e úteis quando o tamanho da coleção pode variar. 
 //- Coleção dinâmica que pode crescer ou diminuir.
@@ -159,7 +210,7 @@ nomes.Add("Carlos");
 
 
 //✅ Declarando com elementos:
-List<int> numeros = new List<int> { 10, 20, 30 };
+List<int> listaDeNumeros = new List<int> { 10, 20, 30 };
 
 
 //✅ Usando var com inferência de tipo:
@@ -169,9 +220,9 @@ var frutas = new List<string> { "Maçã", "Banana", "Laranja" };
 //🔁 Formas de iterar uma lista
 
 //1. 🔄 for tradicional
-for (int i = 0; i < numeros.Count; i++)
+for (int i = 0; i < listaDeNumeros.Count; i++)
 {
-    Console.WriteLine($"Elemento {i}: {numeros[i]}");
+    Console.WriteLine($"Elemento {i}: {listaDeNumeros[i]}");
 }
 
 
@@ -213,6 +264,33 @@ frutass.Remove("Maçã");
 
 // Número de itens
 Console.WriteLine($"Total de frutas: {frutass.Count}");
+
+
+
+// Formas de copiar os elementos de uma `List<T>` (sem copiar a referência)
+
+// Construtor da List
+// Cria uma nova lista com os mesmos elementos.
+List<int> listaOriginal = new List<int> { 1, 2, 3 };
+List<int> copiaLista = new List<int>(listaOriginal);
+
+
+// Cópia manual com `foreach`
+List<int> novaCopia = new List<int>();
+foreach (int item in copiaLista)
+{
+    novaCopia.Add(item);
+}
+
+// Exibindo os elementos copiados
+Console.WriteLine("Elementos copiados de novaCopia:");
+foreach (var item in novaCopia)
+{
+    Console.WriteLine(item);
+}
+
+// Útil se você quiser aplicar alguma transformação ou filtro durante a cópia.
+
 
 
 
