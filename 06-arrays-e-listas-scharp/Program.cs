@@ -3,6 +3,7 @@
 //== ARRAYS E LISTAS em C# ==
 
 // https://balta.io/blog/arrays-monodimensionais-e-multidimensionais-no-csharp
+// https://web.dio.me/track/deal-group-ai-centric-net
 
 /* ARRAYS 
 
@@ -13,11 +14,7 @@ Os elementos são acessados por índices iniciando em 0. */
 
 /* Array monodimensional (vetor)
 O array monodimensional, também conhecido como vetor, é uma lista simples que pode ser declarada da seguinte forma:*/
-using System;
-using System.Runtime.Intrinsics.X86;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-var monodimensionalArray = new int[10];
+int[] monodimensionalArray = new int[10];
 
 /*
  É preciso lembrar que os arrays no C# tem a posição inicial como zero. Sendo assim, um array de 10 elementos fica com as posições: 0, 1, 2... 8, 9.
@@ -26,7 +23,7 @@ var monodimensionalArray = new int[10];
 
  *Inicializando o vetor
   O array pode ser inicializado na declaração Ou posteriormente adicionando valor a cada posição: */
-var monodimensionalArray1 = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int[] monodimensionalArray1 = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 monodimensionalArray1[0] = 61;
 
 /* O valor entre colchetes representa a posição do array que deve receber o valor. No exemplo acima, a posição zero está recebendo o valor 61, ou seja, ao 
@@ -38,7 +35,7 @@ lermos a primeira posição do nosso array teremos 61 como retorno.
 Console.WriteLine($"{monodimensionalArray1[0]}");
 
 
-/*Percorrendo o vetor
+/* ITERANDO / PERCORRENDO O VETOR
 Nós podemos utilizar tanto a instrução for quanto a instrução foreach para percorrer o nosso array e declararmos uma ação cada vez que chegarmos em uma posição diferente.
 
 Primeiro vamos atribuir valores para cada posição do nosso array:*/
@@ -49,16 +46,17 @@ for (var item = 0; item < monodimensionalArray.Length; item++)
 for (var item = 0; item < monodimensionalArray.Length; item++)
     Console.WriteLine(monodimensionalArray[item]);
 
-// Simplificando com foreach:
 
+// Simplificando com foreach:
 foreach (var item in monodimensionalArray)
     Console.WriteLine(monodimensionalArray[item]);
-
 
 
 // Caso tente acessar um index inexistente em um array, por exemplo o array tem 2 elementos
 // e tento acessar o elemento 3 que não existe, será lançada uma exceção:
 int[] arrayInteiros = new int[3];
+// Console.WriteLine(arrayInteiros[3]); // Isso causará um erro de índice fora do intervalo (IndexOutOfRangeException).
+
 
 // Nota 1: Nos casos em que se faça necessário copiar um array, opte sempre pelo método .Clone(). Usar = com arrays apenas cria uma nova referência para os mesmos elementos, 
 //         e a edição de um elemento pode acabar modificando os "dois" arrays.Nota 1: Nos casos em que se faça necessário copiar um array, opte sempre pelo método .Clone(). Usar = com arrays apenas cria uma nova referência para os mesmos elementos, e a edição de um elemento pode acabar modificando os "dois" arrays.
@@ -71,27 +69,32 @@ int[] copiaNumeros = new int[4];
 Array.Copy(numeros, copiaNumeros, numeros.Length);
 
 
-/*
-Array multidimensional (matriz)
+
+// ****************************************************
+
+
+
+/* Array multidimensional (matriz)
+ 
 Um array multidimensional (matriz) é uma estrutura de dados que permite armazenar valores em mais de uma dimensão, como uma tabela ou grade.
 
 
 Declarando a matriz
 Podemos declarar a matriz acima como um array multidimensional 3x2:*/
 
-var rows = 3;
-var columns = 2;
+int rows = 3;
+int columns = 2;
 
-var varMultidimensionalArray = new int[rows, columns];
+int[,] varMultidimensionalArray = new int[rows, columns];
 
 // Ou de forma mais direta:
 
-var multidimensionalArray1 = new int[3, 2];
+int[,] multidimensionalArray1 = new int[3, 2];
 
 //Inicializando a matriz
 //A matriz pode ser inicializada na declaração, variando de acordo com a dimensão da matriz:
 
-var multidimensionalArray = new int[3, 2] { { 16, 52 }, { 91, 43 }, { 77, 28 } };
+int[,] multidimensionalArray = new int[3, 2] { { 16, 52 }, { 91, 43 }, { 77, 28 } };
 
 //Ou posteriormente adicionando valor a cada posição assim como mostrado na matriz monodimensional:
 multidimensionalArray[0, 0] = 16; // primeira linha, coluna um
@@ -109,59 +112,28 @@ Console.WriteLine(multidimensionalArray[0, 0]);
 //E assim teremos como saída no console o valor da posição indicada.
 
 
-// Percorrendo a matriz
-// Com a nossa matriz definida, vamos percorrer os elementos utilizando a instrução foreach para exibir o valor dos elementos no console:
+// ITERANDO / PERCORRENDO A MATRIZ
 
-foreach (var item in multidimensionalArray)
+// Com a nossa matriz definida, vamos percorrer os elementos utilizando a instrução foreach para exibir o valor dos elementos no console:
+foreach (int item in multidimensionalArray)
     Console.WriteLine($"{item}");
 
 
-// **************************************************
-
-// Formas de Iterar Arrays em C#
-
-// Array unidimensional (Vetor)
-int[] notas = { 7, 8, 9 };
-
-Console.WriteLine("Notas (for):");
-for (int i = 0; i < notas.Length; i++)
+// Ou Percorrendo a mesma matriz com for aninhado:
+for (int i = 0; i < multidimensionalArray.GetLength(0); i++)
 {
-    Console.WriteLine($"Nota {i + 1}: {notas[i]}");
-}
-
-Console.WriteLine("\nNotas (foreach):");
-foreach (int nota in notas)
-{
-    Console.WriteLine($"Nota: {nota}");
-}
-
-// Array bidimensional (Matriz)
-int[,] tabela = {
-            { 1, 2 },
-            { 3, 4 },
-            { 5, 6 }
-        };
-
-Console.WriteLine("\nTabela (for aninhado):");
-for (int i = 0; i < tabela.GetLength(0); i++)
-{
-    for (int j = 0; j < tabela.GetLength(1); j++)
+    for (int j = 0; j < multidimensionalArray.GetLength(1); j++)
     {
-        Console.WriteLine($"tabela[{i},{j}] = {tabela[i, j]}");
+        Console.WriteLine($"Linha {i}, Coluna {j}: {multidimensionalArray[i, j]}");
     }
 }
 
-Console.WriteLine("\nTabela (foreach):");
-foreach (int valor in tabela)
-{
-    Console.WriteLine(valor);
-}
 
 // **************************************************
 
-//🔢 Array em C#: Métodos e Propriedades Comuns
+// MÉTODOS PRINCIPAIS DE ARRAY
 
-//🧰 Principais Métodos:
+
 //-Array.Sort(array) → Ordena os elementos.
 //- Array.Reverse(array) → Inverte a ordem dos elementos.
 //- Array.IndexOf(array, valor) → Retorna o índice do valor.
@@ -193,40 +165,41 @@ Array.Clear(numeross, 1, 2); // [50, 0, 0, 10]
 Array.Resize(ref arrayInteiros, arrayInteiros.Length * 2);
 
 
+
 // **************************************************
 
 
-//📋 LISTAS em C#
+// LISTAS em C# ( List<T> )
 
 //- Elas são extremamente versáteis e úteis quando o tamanho da coleção pode variar. 
 //- Coleção dinâmica que pode crescer ou diminuir.
 //- Requer using System.Collections.Generic;
 
-//📋 Como declarar uma List<T>
-//✅ Declarando vazia e adicionando depois:
+// Como declarar uma List<T>
+// Declarando vazia e adicionando depois:
 List<string> nomes = new List<string>();
 nomes.Add("Ana");
 nomes.Add("Carlos");
 
 
-//✅ Declarando com elementos:
+// Declarando com elementos:
 List<int> listaDeNumeros = new List<int> { 10, 20, 30 };
 
 
-//✅ Usando var com inferência de tipo:
+// Usando var com inferência de tipo:
 var frutas = new List<string> { "Maçã", "Banana", "Laranja" };
 
 
-//🔁 Formas de iterar uma lista
+// Formas de iterar uma lista
 
-//1. 🔄 for tradicional
+//1. for tradicional
 for (int i = 0; i < listaDeNumeros.Count; i++)
 {
     Console.WriteLine($"Elemento {i}: {listaDeNumeros[i]}");
 }
 
 
-//2. 🌀 foreach
+//2. foreach
 foreach (string nome in nomes)
     {
         Console.WriteLine(nome);
@@ -234,7 +207,10 @@ foreach (string nome in nomes)
 
 
 
-//🧰 Principais Métodos:
+
+// **************************************************
+
+// MÉTODOS PRINCIPAIS DE UMA List<T>
 
 //- .Add(item) → Adiciona um item.
 //- .Remove(item) → Remove item por valor.
