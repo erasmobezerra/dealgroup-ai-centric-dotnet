@@ -1,6 +1,4 @@
-﻿
-
-//== ARRAYS E LISTAS em C# ==
+﻿//== ARRAYS E LISTAS em C# ==
 
 // https://balta.io/blog/arrays-monodimensionais-e-multidimensionais-no-csharp
 // https://web.dio.me/track/deal-group-ai-centric-net
