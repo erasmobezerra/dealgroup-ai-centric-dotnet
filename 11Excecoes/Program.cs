@@ -1,4 +1,8 @@
 ﻿using _11Excecoes.Models;
+
+// https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/
+
+
 // Exceções e Tratamento de Erros
 
 // Exceção é um evento que ocorre durante a execução de um programa, interrompendo seu fluxo normal.
