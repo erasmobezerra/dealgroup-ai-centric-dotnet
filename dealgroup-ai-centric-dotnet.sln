@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13Tuplas", "13Tuplas\13Tupl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14DescontrutorDeObjetos", "14DescontrutorDeObjetos\14DescontrutorDeObjetos.csproj", "{A907C84E-2E69-43F7-9857-99ACF0155D73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15NugetSerializar", "15NugetSerializar\15NugetSerializar.csproj", "{DE96C3C8-81BE-428B-AD77-A10928660DC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,18 @@ Global
 		{A907C84E-2E69-43F7-9857-99ACF0155D73}.Release|x64.Build.0 = Release|Any CPU
 		{A907C84E-2E69-43F7-9857-99ACF0155D73}.Release|x86.ActiveCfg = Release|Any CPU
 		{A907C84E-2E69-43F7-9857-99ACF0155D73}.Release|x86.Build.0 = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|x64.ActiveCfg = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|x64.Build.0 = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE96C3C8-81BE-428B-AD77-A10928660DC8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
