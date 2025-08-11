@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-// Coleções 
+﻿// Coleções 
 // Coleções são estruturas de dados que permitem armazenar e manipular grupos de objetos.
 
 // https://learn.microsoft.com/pt-br/dotnet/standard/collections/
