@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 
 // JsonProperty -> Mapeia a propriedade da classe para o nome especificado no JSON
+// decimal? -> Tipo que pode receber um valor nulo
 
 namespace _15NugetSerializar.Models
 {
@@ -18,12 +19,16 @@ namespace _15NugetSerializar.Models
         [JsonProperty("data_venda")]
         public DateTime DataVenda { get; set; }
 
-        public Venda(int id, string produto, decimal preco, DateTime dataVenda)
+        [JsonProperty("desconto")]
+        public decimal? Desconto { get; set; }
+
+        public Venda(int id, string produto, decimal preco, DateTime dataVenda, decimal? desconto)
         {
             Id = id;
             Produto = produto;
             Preco = preco;
             DataVenda = dataVenda;
+            Desconto = desconto;
         }
     }
 }

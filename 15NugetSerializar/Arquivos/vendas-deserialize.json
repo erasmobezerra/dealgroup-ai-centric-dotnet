@@ -3,60 +3,70 @@
         "id": 1,
         "nome_produto": "Material de Escritório",
         "preco": 25.00,
-        "data_venda": "2025-08-11T13:36:29.827584-03:00"
+        "data_venda": "2025-08-11T13:36:29.827584-03:00",
+        "desconto": null
     },
     {
         "id": 2,
         "nome_produto": "Licença de Software",
         "preco": 110.00,
-        "data_venda": "2025-08-11T13:36:29.827584-03:00"
+        "data_venda": "2025-08-11T13:36:29.827584-03:00",
+        "desconto": 0.2
     },
     {
         "id": 3,
         "nome_produto": "Cadeira Ergonômica",
         "preco": 350.00,
-        "data_venda": "2025-08-10T10:15:12.123456-03:00"
+        "data_venda": "2025-08-10T10:15:12.123456-03:00",
+        "desconto": 0.2
     },
     {
         "id": 4,
         "nome_produto": "Monitor LED 24\"",
         "preco": 799.90,
-        "data_venda": "2025-08-09T16:42:00.654321-03:00"
+        "data_venda": "2025-08-09T16:42:00.654321-03:00",
+        "desconto": 0.15
     },
     {
         "id": 5,
         "nome_produto": "Teclado Mecânico",
         "preco": 230.00,
-        "data_venda": "2025-08-08T09:30:45.987654-03:00"
+        "data_venda": "2025-08-08T09:30:45.987654-03:00",
+        "desconto": null
     },
     {
         "id": 6,
         "nome_produto": "Mouse Sem Fio",
         "preco": 89.99,
-        "data_venda": "2025-08-07T14:20:33.112233-03:00"
+        "data_venda": "2025-08-07T14:20:33.112233-03:00",
+        "desconto": 0.1
     },
     {
         "id": 7,
         "nome_produto": "Serviço de Consultoria",
         "preco": 1500.00,
-        "data_venda": "2025-08-06T11:00:00.000000-03:00"
+        "data_venda": "2025-08-06T11:00:00.000000-03:00",
+        "desconto": 0.25
     },
     {
         "id": 8,
         "nome_produto": "Impressora Multifuncional",
         "preco": 1200.00,
-        "data_venda": "2025-08-05T17:45:22.445566-03:00"
+        "data_venda": "2025-08-05T17:45:22.445566-03:00",
+        "desconto": null
     },
     {
         "id": 9,
         "nome_produto": "Papel Sulfite A4 - 500 folhas",
         "preco": 35.50,
-        "data_venda": "2025-08-04T08:10:10.101010-03:00"
+        "data_venda": "2025-08-04T08:10:10.101010-03:00",
+        "desconto": null
     },
     {
         "id": 10,
         "nome_produto": "Webcam Full HD",
         "preco": 199.99,
-        "data_venda": "2025-08-03T19:55:55.555555-03:00"
+        "data_venda": "2025-08-03T19:55:55.555555-03:00",
+        "desconto": 0.15
     }
 ]

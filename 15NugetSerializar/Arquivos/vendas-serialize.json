@@ -3,12 +3,28 @@
     "id": 1,
     "nome_produto": "Meterial de Escritório",
     "preco": 25.00,
-    "data_venda": "2025-08-11T14:47:42.2464853-03:00"
+    "data_venda": "2025-08-12T16:13:33.6964316-03:00",
+    "desconto": 0.15
   },
   {
     "id": 2,
     "nome_produto": "Licença de Software",
     "preco": 110.00,
-    "data_venda": "2025-08-11T14:47:42.2464853-03:00"
+    "data_venda": "2025-08-12T16:13:33.6964316-03:00",
+    "desconto": 0.20
+  },
+  {
+    "id": 3,
+    "nome_produto": "Cadeira Ergonômica",
+    "preco": 350.00,
+    "data_venda": "2025-08-12T16:13:33.6964316-03:00",
+    "desconto": 0.25
+  },
+  {
+    "id": 4,
+    "nome_produto": "Monitor LED 24",
+    "preco": 799.90,
+    "data_venda": "2025-08-12T16:13:33.6964316-03:00",
+    "desconto": null
   }
 ]
