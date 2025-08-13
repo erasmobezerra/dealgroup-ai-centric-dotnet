@@ -17,6 +17,41 @@ char? letra = 'a';
 int? contador = 10;
 bool? flag = null;
 int?[] arr = new int?[10];
+string? nullString = null;
+string? emptyString = "";
+string? whiteString = " ";
+
+
+// *Entradas nulas de string 
+//1. Verificar se é nula ou vazia use string.IsNullOrEmpty():
+if (string.IsNullOrEmpty(nullString))
+{
+    Console.WriteLine("A entrada está vazia ou nula.");
+}
+
+if (string.IsNullOrEmpty(emptyString))
+{
+    Console.WriteLine("A entrada está vazia ou nula.");
+}
+
+// 2. Verificar se é nula, vazia ou só espaços use string.IsNullOrWhiteSpace():
+if (string.IsNullOrWhiteSpace(whiteString))
+{
+    Console.WriteLine("A entrada está vazia, nula ou contém apenas espaços.");
+}
+
+// 3. Operador de coalescência nula (??)
+string name = nullString ?? "Visitante";
+Console.WriteLine($"Bem-vindo, {name}!");
+
+// 4. Operador condicional nulo (?.) Evita exceções ao acessar métodos ou propriedades:
+int length = nullString?.Length ?? 0;
+Console.WriteLine($"Comprimento da string: {length}");
+
+//  5. Throw se for nula (validação defensiva) - Para garantir que uma string não seja nula:
+if (nullString is null)
+    throw new ArgumentNullException("A string não pode ser nula.");
+
 
 
 // *Verificação de Valor
@@ -78,4 +113,5 @@ int? a = 5;
 int? b = null;
 int? soma = a + b;               // soma == null
 bool? comparacao = a > b;        // comparacao == null
+
 
