@@ -1,4 +1,21 @@
--- Se já existir uma Tabela chamada Produtos, exclua ela.
+
+-- A LINGUAGEM SQL
+
+-- O que sÃ£o comandos SQL?
+-- Comandos SQL sÃ£o instruÃ§Ãµes utilizadas para gerenciar e manipular dados em bancos de dados relacionais. 
+-- A sigla SQL significa â€œStructured Query Languageâ€, ou â€œLinguagem de Consulta Estruturadaâ€ em portuguÃªs. 
+-- Esses comandos permitem executar operaÃ§Ãµes como consultar, inserir, atualizar e excluir informaÃ§Ãµes em sistemas como MySQL, PostgreSQL, Oracle e SQL Server. 
+-- Embora seja uma linguagem padrÃ£o, cada Sistema Gerenciador de Banco de Dados (SGBD) possui particularidades. 
+-- Podemos dividir os comandos SQL em grupos: DDL, DQL, DML, DCL e TCL. 
+
+-- DDL (Data Definition Language): CREATE, DROP, ALTER, TRUNCATE
+-- DCL (Data Control Language): GRANT, REVOKE
+-- DML (Data Manipulation Language): INSERT, UPDATE, DELETE
+-- TCL (Data Transaction Language: COMMIT, ROLLBACK, SAVE POINT 
+-- DQL  (Data Query Language): SELECT 
+
+
+-- Se jï¿½ existir uma Tabela chamada Produtos, exclua ela.
 DROP TABLE IF EXISTS dbo.Clientes
 -- Criar Tabela Produtos com as seguintes colunas e tipos de dados
 CREATE TABLE [dbo].[Clientes](
@@ -22,7 +39,7 @@ SELECT * FROM dbo.Clientes ORDER BY Nome;
 -- Ordenando todas as colunas da tabela dbo.Clientes ordenadas descendente (DESC) pelo Nome
 SELECT * FROM dbo.Clientes ORDER BY Nome DESC;
 
--- Ordenando todas as colunas da tabela dbo.Clientes de forma ordenada (ASC) 1ª pelo Nome e 2º pelo Sobrenome
+-- Ordenando todas as colunas da tabela dbo.Clientes de forma ordenada (ASC) 1ï¿½ pelo Nome e 2ï¿½ pelo Sobrenome
 SELECT * FROM dbo.Clientes ORDER BY Nome, Sobrenome;
 
 -- Selecionar todas as colunas da tabela dbo.Clientes onde Nome = 'Adam' e ordene pelo Nome
@@ -41,22 +58,22 @@ SELECT * FROM dbo.Clientes WHERE Nome LIKE 'G%'
 -- Selecionar todas as colunas da tabela dbo.Clientes onde Nome contem a letra 'G'
 SELECT * FROM dbo.Clientes WHERE Nome LIKE '%G%' 
 
--- Insira na tabela Cliente os valores informados na ordem de colunas informadas. (caso a ordem seja a mesma da tabela, não é preciso informar os nomes das colunas)  
+-- Insira na tabela Cliente os valores informados na ordem de colunas informadas. (caso a ordem seja a mesma da tabela, nï¿½o ï¿½ preciso informar os nomes das colunas)  
 INSERT INTO Clientes (Nome, Sobrenome, Email, AceitaComunicados, DataCadastro)
 VALUES ('Erasmo', 'Buta', 'erasmo@gmail.com', 1, GETDATE())
 
 -- Verificar se o registro foi inserido 
 SELECT * FROM dbo.Clientes WHERE Nome = 'Erasmo'
 
--- Caso a ordem de inserção seja a mesma da tabela, não é preciso informar os nomes das colunas
+-- Caso a ordem de inserï¿½ï¿½o seja a mesma da tabela, nï¿½o ï¿½ preciso informar os nomes das colunas
 INSERT INTO Clientes VALUES ('Daniel', 'Bezerra', 'daniel@gmail.com', 1, GETDATE())
 
 -- Verificar se o registro foi inserido
 SELECT * FROM dbo.Clientes WHERE Nome = 'Daniel' AND Sobrenome = 'Bezerra'
 
--- Se na criação da tabela o identificador (Id) foi implementado, não é necessário informar essa coluna nas pesquisas INSERT. 
--- Ao utilizar UPDATE e DELETE, é recomendado usar o Id no Where para especificar o registro
--- Caso esqueça de utilizar Where nos comandos UPDATE E DELETE, todos as colunas de todos os registros da tabela serão afetados
+-- Se na criaï¿½ï¿½o da tabela o identificador (Id) foi implementado, nï¿½o ï¿½ necessï¿½rio informar essa coluna nas pesquisas INSERT. 
+-- Ao utilizar UPDATE e DELETE, ï¿½ recomendado usar o Id no Where para especificar o registro
+-- Caso esqueï¿½a de utilizar Where nos comandos UPDATE E DELETE, todos as colunas de todos os registros da tabela serï¿½o afetados
 
 -- Atualiza na tabela Clientes as colunas Email e AceitaComunicados onde o Id = 1
 UPDATE Clientes 
@@ -71,16 +88,16 @@ DELETE Clientes WHERE Id = 1;
 
 
 
--- BEGIN TRAN (Begin Transaction) => Esse comando inicia uma transação. A partir desse ponto, todas as operações (como INSERT, UPDATE, DELETE) 
---                                   ficam pendentes até que você decida confirmar ou cancelar a transação.
---                                   Garante que todas as operações sejam concluídas com sucesso antes de salvar as alterações no banco.
+-- BEGIN TRAN (Begin Transaction) => Esse comando inicia uma transaï¿½ï¿½o. A partir desse ponto, todas as operaï¿½ï¿½es (como INSERT, UPDATE, DELETE) 
+--                                   ficam pendentes atï¿½ que vocï¿½ decida confirmar ou cancelar a transaï¿½ï¿½o.
+--                                   Garante que todas as operaï¿½ï¿½es sejam concluï¿½das com sucesso antes de salvar as alteraï¿½ï¿½es no banco.
 
--- ROLLBACK => Esse comando desfaz todas as alterações feitas desde o BEGIN TRAN. É como apertar "cancelar" — útil quando ocorre um erro ou algo inesperado.
---             Nenhuma alteração é salva no banco. 
+-- ROLLBACK => Esse comando desfaz todas as alteraï¿½ï¿½es feitas desde o BEGIN TRAN. ï¿½ como apertar "cancelar" ï¿½ ï¿½til quando ocorre um erro ou algo inesperado.
+--             Nenhuma alteraï¿½ï¿½o ï¿½ salva no banco. 
 
--- COMMIT => Confirma todas as alterações feitas desde o BEGIN TRANSACTION.
+-- COMMIT => Confirma todas as alteraï¿½ï¿½es feitas desde o BEGIN TRANSACTION.
 --           Grava permanentemente os dados no banco.
---           Depois do COMMIT, não dá pra voltar atrás com ROLLBACK.
+--           Depois do COMMIT, nï¿½o dï¿½ pra voltar atrï¿½s com ROLLBACK.
 
 
 BEGIN TRAN

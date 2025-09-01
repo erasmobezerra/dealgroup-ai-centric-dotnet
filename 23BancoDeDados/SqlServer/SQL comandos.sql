@@ -1,5 +1,17 @@
  =============================================================================================
- PRAGMA foreign_keys = on;
+
+-- A LINGUAGEM SQL
+
+-- O que são comandos SQL?
+-- Comandos SQL são instruções utilizadas para gerenciar e manipular dados em bancos de dados relacionais. 
+-- A sigla SQL significa “Structured Query Language”, ou “Linguagem de Consulta Estruturada” em português. 
+-- Esses comandos permitem executar operações como consultar, inserir, atualizar e excluir informações em sistemas como MySQL, PostgreSQL, Oracle e SQL Server. 
+-- Embora seja uma linguagem padrão, cada Sistema Gerenciador de Banco de Dados (SGBD) possui particularidades. 
+-- Podemos dividir os comandos SQL em grupos: DDL, DQL, DML, DCL e TCL. 
+
+
+
+PRAGMA foreign_keys = on;
  
  drop table demo; 
  
