@@ -1,3 +1,5 @@
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,6 +20,9 @@ if (app.Environment.IsDevelopment())
     // Swagger
     app.UseSwagger(); // <!-- Add this line
     app.UseSwaggerUI(); // <!-- Add this line
+
+    // Scalar
+    app.MapScalarApiReference(); // <-- Add this line
 }
 
 app.UseHttpsRedirection();
