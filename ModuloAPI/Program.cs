@@ -6,23 +6,27 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// adicionar Swashbuckle do Swagger
-builder.Services.AddEndpointsApiExplorer(); // <!-- Add this line
-builder.Services.AddSwaggerGen(); // <!-- Add this line
+// adicionar Swagger
+builder.Services.AddEndpointsApiExplorer(); 
+builder.Services.AddSwaggerGen(); 
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    // OpenApi
+    // http://localhost:5137/openapi/v1.json
     app.MapOpenApi();
 
     // Swagger
-    app.UseSwagger(); // <!-- Add this line
-    app.UseSwaggerUI(); // <!-- Add this line
+    // http://localhost:5137/swagger/index.html
+    app.UseSwagger(); 
+    app.UseSwaggerUI(); 
 
     // Scalar
-    app.MapScalarApiReference(); // <-- Add this line
+    // http://localhost:5137/scalar/v1
+    app.MapScalarApiReference(); 
 }
 
 app.UseHttpsRedirection();
