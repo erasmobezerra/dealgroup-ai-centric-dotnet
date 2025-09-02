@@ -22,6 +22,14 @@ namespace ModuloAPI.Controllers
             return Ok(obj);
         }
 
-        
+        [HttpGet("apresentar/{nome}")]
+        public IActionResult Apresentar(string nome)
+        {
+            var obj = new
+            {
+                Apresentacao = $"Meu nome é {nome}, prazer em te conhecer!"
+            };
+            return Ok(obj);
+        }
     }
 }
