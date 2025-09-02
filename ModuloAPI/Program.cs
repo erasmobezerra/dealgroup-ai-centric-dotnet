@@ -6,13 +6,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// adicionar Swagger
-builder.Services.AddEndpointsApiExplorer(); 
-builder.Services.AddSwaggerGen(); 
+
+// adicionar suporte a controllers MVC
+builder.Services.AddControllers();
+
+// adicionar suporte a Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline for development
 if (app.Environment.IsDevelopment())
 {
     // OpenApi
@@ -22,39 +27,20 @@ if (app.Environment.IsDevelopment())
     // Swagger
     // Interface: http://localhost:5137/swagger/index.html
     // Learn more about configuring SwaggerUI at https://swagger.io/tools/swagger-ui/
-    app.UseSwagger(); 
+    app.UseSwagger();
     app.UseSwaggerUI();
 
     // Scalar
     // Interface: http://localhost:5137/scalar/v1
     // Learn more about configuring Scalar at https://guides.scalar.com/scalar/introduction
-    app.MapScalarApiReference(); 
+    app.MapScalarApiReference();
 }
+
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// Mapeia endpoints dos controllers
+app.MapControllers();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+// ...existing code...
+await app.RunAsync();
