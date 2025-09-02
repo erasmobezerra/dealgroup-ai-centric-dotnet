@@ -16,16 +16,18 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     // OpenApi
-    // http://localhost:5137/openapi/v1.json
+    // Interface: http://localhost:5137/openapi/v1.json
     app.MapOpenApi();
 
     // Swagger
-    // http://localhost:5137/swagger/index.html
+    // Interface: http://localhost:5137/swagger/index.html
+    // Learn more about configuring SwaggerUI at https://swagger.io/tools/swagger-ui/
     app.UseSwagger(); 
-    app.UseSwaggerUI(); 
+    app.UseSwaggerUI();
 
     // Scalar
-    // http://localhost:5137/scalar/v1
+    // Interface: http://localhost:5137/scalar/v1
+    // Learn more about configuring Scalar at https://guides.scalar.com/scalar/introduction
     app.MapScalarApiReference(); 
 }
 
