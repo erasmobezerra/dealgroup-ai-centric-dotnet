@@ -1,20 +1,19 @@
-﻿string[] line1 = Console.ReadLine().Split(" ");
-string[] line2 = Console.ReadLine().Split(" ");
+﻿int limit = Int32.Parse(Console.ReadLine());
 
-int finalExpediente = int.Parse(line1[0]);
-
-
-int presente1 = int.Parse(line2[0]);
-int presente2 = int.Parse(line2[1]);
-
-int totalNecessario = presente1 + presente2;
-
-
-if (totalNecessario > finalExpediente)
+for (int i = 0; i < limit; i++)
 {
-    Console.WriteLine("Deixa para amanha!");
-}
-else
-{
-    Console.WriteLine("Farei hoje!");
+    string[] line = Console.ReadLine().Split(" ");
+    
+    double X = double.Parse(line[0]);
+    double Y = double.Parse(line[1]);
+
+    if ( Y > 0 )
+    {
+        double resultado = X / Y;
+        Console.WriteLine($"{resultado:F1}");
+    }
+    else
+    {
+        Console.WriteLine("divisao impossivel");
+    }
 }
