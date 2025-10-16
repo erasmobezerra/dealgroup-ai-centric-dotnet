@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloAPI", "ModuloAPI\Modu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24IntroCleanCode", "24IntroCleanCode\24IntroCleanCode.csproj", "{D57B83F1-3B16-4F88-80D2-337ACB806871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20StackHeapGarbageCollection", "20StackHeapGarbageCollection\20StackHeapGarbageCollection.csproj", "{97E9D586-29DD-4005-B2FD-377735466041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -391,6 +393,18 @@ Global
 		{D57B83F1-3B16-4F88-80D2-337ACB806871}.Release|x64.Build.0 = Release|Any CPU
 		{D57B83F1-3B16-4F88-80D2-337ACB806871}.Release|x86.ActiveCfg = Release|Any CPU
 		{D57B83F1-3B16-4F88-80D2-337ACB806871}.Release|x86.Build.0 = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|x64.Build.0 = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Debug|x86.Build.0 = Debug|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|x64.ActiveCfg = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|x64.Build.0 = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|x86.ActiveCfg = Release|Any CPU
+		{97E9D586-29DD-4005-B2FD-377735466041}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
