@@ -10,7 +10,7 @@ Console.WriteLine(saudacao);
 
 // Exemplo de **Interpolação** de Strings
 // A interpolação é mais elegante e fácil de ler. Usa o símbolo `$` antes da string:
-string nome = "João";
+nome = "João";
 int idade = 30;
 string mensagem = $"Olá, {nome}. Você tem {idade} anos.";
 Console.WriteLine(mensagem);
